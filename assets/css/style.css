@@ -1,0 +1,88 @@
+/*#region Stylesheet Rules */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML rule */
+html {
+    /* Rules to centerize body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Full Height of my HTML file */
+    height: 100vh;
+}
+
+/* Body Rule */
+body {
+    max-width: 1440px;
+    width: 100%;
+    /* Checked design height (desktop-design.jpg) on ​​Figma  */
+    height: 800px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*#endregion */
+
+/*#region Root Elements */
+
+/* Color palette  */
+:root {
+    --Grayish_blue : hsl(237, 18%, 59%);
+    --Soft_red : hsl(345, 95%, 68%);
+    --White: hsl(0, 0%, 100%);
+    --Dark_desaturated_blue: hsl(236, 21%, 26%);
+    --Very_dark_blue:hsl(235, 16%, 14%);
+    --Mostly_black_blue: hsl(234, 17%, 12%);
+}
+
+/* Import of my Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+/* Font Size and Font family */
+:root {
+    --font-family: 'Red Hat Text', sans-serif;
+    --font-weight: 700;
+    --launching-soon-size: 22px; /* Main title size (We're launching..) */
+    --launching-soon-space: 5px; /* Space Between letters */
+    --launching-soon-word-space:5px; /* Space between words */
+    --countdown-size:78px; /* Countdown numbers (08 etc..) */
+    --countdown-text:14px; /* Days, hours etc */
+    --countdown-text-space:6px; /* Letter Spacing */
+}
+/*#endregion */
+
+
+
+/*#region Media Queries */
+@media screen and (max-width: 375px) {
+    /*#region stylesheet rules  */
+    *,
+    *::before,
+    *::after{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        display: flex;
+        justify-content: center;
+    }
+    
+    body {
+        max-width: 375px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    /*#endregion  */
+}
+/*#endregion  */
