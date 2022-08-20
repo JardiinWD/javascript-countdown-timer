@@ -60,7 +60,21 @@ body {
 }
 /*#endregion */
 
-
+.countdown div {
+    /* Style Properties */
+    width: 148px;
+    height: 140px;
+    background: linear-gradient(to bottom, var(--Very_dark_blue) 50%, var(--Dark_desaturated_blue)0);
+    /* Align Properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Font Properties */
+    font-family: var(--font-family);
+    font-size: var(--countdown-size);
+    color: var(--Soft_red);
+}
 
 /*#region Media Queries */
 @media screen and (max-width: 375px) {
