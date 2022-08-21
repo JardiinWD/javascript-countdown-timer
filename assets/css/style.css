@@ -80,7 +80,7 @@ body .container {
 
 /*#endregion */
 
-/*#region Main Title & Countdown text */
+/*#region Main Title */
 
 .main_title {
     color: var(--White);
@@ -99,7 +99,8 @@ body .container {
 /*#region Countdown Rules */
 
 /* This is my countdown div wrapper */
-.countdown {
+.countdown,
+.periods{
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -123,12 +124,7 @@ body .container {
     font-family: var(--font-family);
     font-size: var(--countdown-size);
     color: var(--Soft_red);
-
 }
-
-
-
-
 
 /* These are the little boxes in my div */
 div .left,
@@ -169,6 +165,44 @@ div .right {
 */
 
 /*#endregion */
+
+/*#region Periods */
+
+/* This is my periods container (Hours, minutes etc..) */
+.periods {
+    padding-top: 30px;
+}
+
+/* These are my single period of time */
+.periods p {
+    font-family: var(--font-family);
+    font-size: var(--countdown-text);
+    letter-spacing: var(--countdown-text-space);
+    text-transform: uppercase;
+    width: 148px;
+    text-align: center;
+    color: var(--Grayish_blue);
+}
+
+/*#endregion */
+
+/*#region Icons */
+.icons {
+    margin-top: 240px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 32px;
+    padding: 0;
+}
+
+.single_icon {
+    width: 24px;
+    height: 24px;
+}
+
+/*#endregion */
+
 
 /*#region Media Queries */
 @media screen and (max-width: 375px) {

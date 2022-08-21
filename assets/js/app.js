@@ -1,8 +1,48 @@
+//#region Const and variables
 
 const countdown = document.querySelector('.countdown')
 console.log(countdown);
 
+/* This is my Icons wrapper */
+const myIconLinks = document.querySelector('.icons')
+console.log(myIconLinks);
+
+/* This is my Periods wrapper */
+const appTime = document.querySelector('.periods')
+console.log(appTime);
+//#endregion
+
+//#region Arrays and data
+const iconLinks = [
+    {
+        a_class: 'single_icon',
+        a_ref: '#',
+        img: './assets/images/icon-facebook.svg',
+        alt: 'Facebook Icon'
+    },
+    {
+        a_class: 'single_icon',
+        a_ref: '#',
+        img: './assets/images/icon-pinterest.svg',
+        alt: 'Pinterest Icon'
+    },
+    {
+        a_class: 'single_icon',
+        a_ref: '#',
+        img: './assets/images/icon-instagram.svg',
+        alt: 'Instagram Icon'
+    }
+]
+console.log(iconLinks);
+
+const myPeriod = ['Days', 'Hours', 'Minutes', 'Seconds']
+console.log(myPeriod);
+
+//#endregion
+
+
 /* This is my Setinterval method */
+
 const countdownInterval = setInterval(() => {
 
     /* This is my Deadline */
@@ -48,6 +88,7 @@ const countdownInterval = setInterval(() => {
                 <span class="left"></span>
                 ${days}
                 <span class="right"></span>
+                
             </div>
 
             <div>
@@ -69,3 +110,20 @@ const countdownInterval = setInterval(() => {
             </div>
         `
 }, 1000)
+
+/* This is my forEach loop for generate the icons dinamically */
+iconLinks.forEach(element => {
+    let singleFooterIcon =
+        `
+        <a class="${element.a_class}" href="${element.a_ref}">
+            <img src="${element.img}" alt="${element.alt}">
+        </a>
+        `
+    myIconLinks.insertAdjacentHTML('beforeend', singleFooterIcon)
+})
+
+/* This is my for loop for generate periods of time dinamically */
+for (let i = 0; i < myPeriod.length; i++) {
+    console.log(myPeriod[i]);
+    appTime.insertAdjacentHTML('beforeend', `<p>${myPeriod[i]}</p>`)
+}
