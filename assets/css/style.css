@@ -1,5 +1,6 @@
 /*#region Stylesheet Rules */
 
+/* Stylesheet rule */
 *,
 *::before,
 *::after {
@@ -28,6 +29,11 @@ body {
     overflow-x: hidden;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* This class is one of my utilities to check the position of objects and elements */
+.bordo {
+    border: 2px solid black;
 }
 
 /*#endregion */
@@ -60,11 +66,54 @@ body {
 }
 /*#endregion */
 
+/*#region Container rules */
+
+body .container {
+    width: 100%;
+    height: 100%;
+    background-image: url('./../images/bg-stars.svg'), url('./../images/pattern-hills.svg');
+    background-position: center top, center bottom;
+    background-repeat: no-repeat, no-repeat;
+    /* background-color: linear-gradient(to bottom, #241E2C 50%, #1E1E28 0% ); */
+    background-color: #231D2B;
+}
+
+/*#endregion */
+
+/*#region Main Title & Countdown text */
+
+.main_title {
+    color: var(--White);
+    font-family: var(--font-family);
+    font-size: var(--launching-soon-size);
+    word-spacing: var(--launching-soon-word-space);
+    letter-spacing: var(--launching-soon-space);
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 110px;
+}
+
+/*#endregion */
+
+/*#region Countdown Rules */
+
+/* This is my countdown div wrapper */
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 30px;
+}
+
+/* These are my Countdown boxes */
 .countdown div {
     /* Style Properties */
     width: 148px;
     height: 140px;
-    background: linear-gradient(to bottom, var(--Very_dark_blue) 50%, var(--Dark_desaturated_blue)0);
+    border-radius: 8px;
+    box-shadow: 0px 9px 0px #1A1A23;
+    background: linear-gradient(to top, #34364F 50%, #2C2C44 0%);
     /* Align Properties */
     display: flex;
     justify-content: center;
@@ -74,7 +123,52 @@ body {
     font-family: var(--font-family);
     font-size: var(--countdown-size);
     color: var(--Soft_red);
+
 }
+
+
+
+
+
+/* These are the little boxes in my div */
+div .left,
+div .right {
+    /* Position */
+    position: absolute;
+    top: 0%;
+    transform: translateY(65px);   
+    /* Style */
+    width: 6px;
+    height: 10px;
+    background-color: #1E1E2A;
+}
+div .left {
+    left: 0%;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+div .right {
+    right: 0%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+/* 
+.countdown div:nth-last-child(1) {
+    animation-fill-mode: forwards;
+    animation-name: flippingSeconds;
+    animation-delay:60s;
+    animation-duration: 1s; 
+}
+
+@keyframes flippingSeconds {
+    to {
+        transform: rotateX(360deg);          
+    }
+}  
+*/
+
+/*#endregion */
 
 /*#region Media Queries */
 @media screen and (max-width: 375px) {
@@ -86,7 +180,7 @@ body {
         padding: 0;
         box-sizing: border-box;
     }
-
+    
     html {
         display: flex;
         justify-content: center;

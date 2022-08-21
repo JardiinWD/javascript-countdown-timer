@@ -1,5 +1,3 @@
-/* Declaration of my strict mode */
-/* 'use strict' */
 
 const countdown = document.querySelector('.countdown')
 console.log(countdown);
@@ -8,7 +6,7 @@ console.log(countdown);
 const countdownInterval = setInterval(() => {
 
     /* This is my Deadline */
-    const deadLine = new Date(2022, 7, 22, 12, 00, 00)
+    const deadLine = new Date(2022, 7, 22, 10, 16, 00)
     // console.log(deadLine);
 
     /* This is my Current time (expressed in milliseconds) */
@@ -19,6 +17,11 @@ const countdownInterval = setInterval(() => {
     const difference = deadLine - currentTime;
     // console.log(difference);
 
+    if (difference == 0) {
+        myStopFunction()
+    }
+
+
     /* These are my countdown elements */
     const days = Math.floor(difference / (100 * 60 * 60 * 20)) /* These are my Days */
     const hours = Math.floor(difference / (1000 * 60 * 60) % 24) /* These are my Hours */
@@ -26,7 +29,9 @@ const countdownInterval = setInterval(() => {
     const seconds = Math.floor((difference / 1000) % 60) /* These are my Seconds */
 
 
-    /* These are my console Logs  */
+    /* These are my console Logs */
+    /* I had to turn them off to keep the console from filling up */
+
     // console.log(`These are the remain seconds before the deadline : ${days}`);
     // console.log(`These are the remain hours before the deadline : ${hours}`);
     // console.log(`These are the remain minutes before the deadline : ${minutes}`);
@@ -35,11 +40,35 @@ const countdownInterval = setInterval(() => {
 
     /* These are the moment where i have to inject my remain variables to the DOM */
     countdown.innerHTML =
-        `
-            <div>${days}</div>
-            <div>${hours}</div>
-            <div>${minutes}</div>
-            <div>${seconds}</div>
+        `   
+            <div>
+                <span class="left"></span>
+                ${days}
+                <span class="right"></span>
+            </div>
+
+            <div>
+                <span class="left"></span>
+                ${hours}
+                <span class="right"></span>    
+            </div>
+            
+            <div>
+                <span class="left"></span>
+                ${minutes}
+                <span class="right"></span>    
+            </div>
+
+            <div>
+                <span class="left"></span>
+                ${seconds}
+                <span class="right"></span>    
+            </div>
         `
 }, 1000)
+
+function myStopFunction() {
+    /* I need to stop my setInterval function */
+    clearInterval(countdownInterval);
+}
 
