@@ -214,17 +214,107 @@ div .right {
         padding: 0;
         box-sizing: border-box;
     }
-    
+
     html {
-        display: flex;
-        justify-content: center;
-    }
-    
-    body {
         max-width: 375px;
+        overflow-x: hidden;
+        height: 667px;
+    }
+
+    body {
+        max-width: 100%;
+        max-height: 100%;
         width: 100%;
         margin: 0 auto;
     }
+
+    body .container {
+        width: 100%;
+        height: 100%;
+        background-image: url('./../images/bg-stars.svg'), url('./../images/pattern-hills.svg');
+        background-position: center top, center bottom;
+        background-repeat: no-repeat, no-repeat;
+        /* background-color: linear-gradient(to bottom, #241E2C 50%, #1E1E28 0% ); */
+        background-color: #231D2B;
+    }
     /*#endregion  */
+
+    /*#region Main Title */
+    .main_title {
+        color: var(--White);
+        font-family: var(--font-family);
+        font-size: var(--launching-soon-size);
+        word-spacing: var(--launching-soon-word-space);
+        letter-spacing: var(--launching-soon-space);
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 145px;
+        padding-bottom: 60px;
+    }
+    /*#endregion */
+
+    /*#region Countdown Rules */
+
+    .countdown div {
+        /* Style Properties */
+        width: 70px;
+        height: 65px;
+        border-radius: 8px;
+        box-shadow: 0px 5px 0px #1A1A23;
+        background: linear-gradient(to top, #34364F 50%, #2C2C44 0%);
+        /* Align Properties */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* Font Properties */
+        font-family: var(--font-family);
+        font-size: 36px;
+        color: var(--Soft_red);
+    }
+
+    .countdown,
+    .periods   {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 16px;
+    }
+    /*#endregion */
+
+    /*#region Periods */
+
+    /* This is my periods container (Hours, minutes etc..) */
+    .periods {
+        padding-top: 16px;
+    }
+
+    /* These are my single period of time */
+    .periods p {
+        font-family: var(--font-family);
+        font-size: 8px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        width: 70px;
+        text-align: center;
+        color: var(--Grayish_blue);
+    }
+    /*#endregion */
+
+    /*#region Icons */
+    .icons {
+        margin-top: 240px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        column-gap: 32px;
+        padding: 0;
+    }
+    
+    .single_icon {
+        width: 24px;
+        height: 24px;
+    }
+    /*#endregion */
 }
 /*#endregion  */

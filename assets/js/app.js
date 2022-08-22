@@ -55,13 +55,26 @@ const countdownInterval = setInterval(() => {
 
     /* This is the difference between de Deadline and the currenttime */
     const difference = deadLine - currentTime;
-    console.log(difference);
+    // console.log(difference);
 
     /* These are my countdown elements */
     let days = Math.floor(difference / (100 * 60 * 60 * 20)) /* These are my Days */
     let hours = Math.floor(difference / (1000 * 60 * 60) % 24) /* These are my Hours */
     let minutes = Math.floor(difference / (1000 * 60) % 60) /* These are my Minutes */
     let seconds = Math.floor((difference / 1000) % 60) /* These are my Seconds */
+
+    /* Condition to modify my seconds, hours etc. if they are under 10 */
+    if (seconds < 10) {
+        seconds = `0${Math.floor((difference / 1000) % 60)}`
+    } else if (minutes < 10) {
+        minutes = `0${Math.floor(difference / (1000 * 60) % 60)}`
+    } else if (hours < 10) {
+        hours = `0${Math.floor(difference / (1000 * 60 * 60) % 24)}`
+    } else if (days < 10) {
+        days = `0${Math.floor(difference / (100 * 60 * 60 * 20))}`
+    }
+
+
 
     /* This is my statement for not show in the DOM negative values */
     if (seconds <= 0 && days <= 0 && hours <= 0 && minutes <= 0) {
@@ -71,6 +84,7 @@ const countdownInterval = setInterval(() => {
         minutes = 0 /* These are my Minutes */
         console.log(seconds);
     }
+
 
     /* These are my console Logs */
     /* I had to turn them off to keep the console from filling up */
