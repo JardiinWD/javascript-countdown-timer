@@ -9,27 +9,34 @@
     box-sizing: border-box;
 }
 
-/* HTML rule */
-html {
-    /* Rules to centerize body */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Full Height of my HTML file */
-    height: 100vh;
-}
 
 /* Body Rule */
 body {
-    max-width: 1440px;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     /* Checked design height (desktop-design.jpg) on ​​Figma  */
-    height: 800px;
     overflow-y: hidden;
     overflow-x: hidden;
-    margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./../images/bg-stars.svg'), url('./../images/pattern-hills.svg');
+    background-position: center top, center bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    /* background-color: linear-gradient(to bottom, #241E2C 50%, #1E1E28 0% ); */
+    background-color: #231D2B;
 }
+
+body .container {
+    max-width: 1440px;
+    width: 100%;
+    height: 800px;
+    
+
+}
+
+
 
 /* This class is one of my utilities to check the position of objects and elements */
 .bordo {
@@ -68,15 +75,7 @@ body {
 
 /*#region Container rules */
 
-body .container {
-    width: 100%;
-    height: 100%;
-    background-image: url('./../images/bg-stars.svg'), url('./../images/pattern-hills.svg');
-    background-position: center top, center bottom;
-    background-repeat: no-repeat, no-repeat;
-    /* background-color: linear-gradient(to bottom, #241E2C 50%, #1E1E28 0% ); */
-    background-color: #231D2B;
-}
+
 
 /*#endregion */
 
@@ -196,13 +195,9 @@ div .right {
     padding: 0;
 }
 
-.fa-brands {
-    font-size: 24px;
-    color: var(--Grayish_blue);
-}
-
-.fa-brands:hover {
-    color: var(--Soft_red);
+.single_icon {
+    width: 24px;
+    height: 24px;
 }
 
 /*#endregion */
@@ -222,15 +217,11 @@ div .right {
     html {
         max-width: 375px;
         overflow-x: hidden;
-        overflow-y: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 667px;
     }
 
     body {
         max-width: 100%;
-        height: 667px;
         max-height: 100%;
         width: 100%;
         margin: 0 auto;
@@ -240,11 +231,10 @@ div .right {
         width: 100%;
         height: 100%;
         background-image: url('./../images/bg-stars.svg'), url('./../images/pattern-hills.svg');
-        background-position: center top, right bottom;
+        background-position: center top, center bottom;
         background-repeat: no-repeat, no-repeat;
         /* background-color: linear-gradient(to bottom, #241E2C 50%, #1E1E28 0% ); */
         background-color: #231D2B;
-        background-size: contain, 300%;
     }
     /*#endregion  */
 
@@ -284,33 +274,10 @@ div .right {
 
     .countdown,
     .periods   {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        column-gap: 16px;
-    }
-
-    /* These are the little boxes in my div */
-    div .left,
-    div .right {
-        /* Position */
-        position: absolute;
-        top: 0%;
-        transform: translateY(28.5px);   
-        /* Style */
-        width: 5px;
-        height: 6px;
-        background-color: #1E1E2A;
-    }
-    div .left {
-        left: 0%;
-        border-bottom-right-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-    div .right {
-        right: 0%;
-        border-bottom-left-radius: 5px;
-        border-top-left-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 16px;
     }
     /*#endregion */
 
@@ -343,13 +310,9 @@ div .right {
         padding: 0;
     }
     
-    .fa-brands {
-        font-size: 24px;
-        color: var(--Grayish_blue);
-    }
-    
-    .fa-brands:hover {
-        color: var(--Soft_red);
+    .single_icon {
+        width: 24px;
+        height: 24px;
     }
     /*#endregion */
 }

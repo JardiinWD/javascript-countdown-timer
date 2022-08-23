@@ -17,20 +17,17 @@ const iconLinks = [
     {
         a_class: 'single_icon',
         a_ref: '#',
-        img: './assets/images/icon-facebook.svg',
-        alt: 'Facebook Icon'
+        icon: "fa-brands fa-square-facebook"
     },
     {
         a_class: 'single_icon',
         a_ref: '#',
-        img: './assets/images/icon-pinterest.svg',
-        alt: 'Pinterest Icon'
+        icon: "fa-brands fa-pinterest"
     },
     {
         a_class: 'single_icon',
         a_ref: '#',
-        img: './assets/images/icon-instagram.svg',
-        alt: 'Instagram Icon'
+        icon: "fa-brands fa-instagram"
     }
 ]
 console.log(iconLinks);
@@ -46,7 +43,7 @@ console.log(myPeriod);
 const countdownInterval = setInterval(() => {
 
     /* This is my Deadline */
-    const deadLine = new Date(2022, 7, 23, 15, 36, 00)
+    const deadLine = new Date(2022, 7, 24, 12, 12, 0)
     // console.log(deadLine);
 
     /* This is my Current time (expressed in milliseconds) */
@@ -66,14 +63,16 @@ const countdownInterval = setInterval(() => {
     /* Condition to modify my seconds, hours etc. if they are under 10 */
     if (seconds < 10) {
         seconds = `0${Math.floor((difference / 1000) % 60)}`
-    } else if (minutes < 10) {
+    }
+    if (minutes < 10) {
         minutes = `0${Math.floor(difference / (1000 * 60) % 60)}`
-    } else if (hours < 10) {
+    }
+    if (hours < 10) {
         hours = `0${Math.floor(difference / (1000 * 60 * 60) % 24)}`
-    } else if (days < 10) {
+    }
+    if (days < 10) {
         days = `0${Math.floor(difference / (100 * 60 * 60 * 20))}`
     }
-
 
 
     /* This is my statement for not show in the DOM negative values */
@@ -82,7 +81,7 @@ const countdownInterval = setInterval(() => {
         days = 0 /* These are my Days */
         hours = 0 /* These are my Hours */
         minutes = 0 /* These are my Minutes */
-        console.log(seconds);
+        // console.log(seconds);
     }
 
 
@@ -130,7 +129,7 @@ iconLinks.forEach(element => {
     let singleFooterIcon =
         `
         <a class="${element.a_class}" href="${element.a_ref}">
-            <img src="${element.img}" alt="${element.alt}">
+            <i class="${element.icon}"></i>
         </a>
         `
     myIconLinks.insertAdjacentHTML('beforeend', singleFooterIcon)
